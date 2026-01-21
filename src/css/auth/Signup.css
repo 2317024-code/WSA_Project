@@ -1,0 +1,291 @@
+.signup-container {
+  @apply w-full h-screen flex items-center justify-center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #3f0f5c 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background elements */
+.signup-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.signup-container::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(30px); }
+}
+
+.signup-card {
+  @apply relative z-10 w-full max-w-md px-8 py-12 rounded-3xl;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+              0 0 60px rgba(168, 85, 247, 0.1);
+  animation: slideInUp 0.8s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-card h1 {
+  @apply text-4xl font-bold text-center mb-2;
+  background: linear-gradient(135deg, #ffffff, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.signup-card p {
+  @apply text-center text-gray-400 text-sm mb-8;
+}
+
+form {
+  @apply space-y-5;
+}
+
+.form-group {
+  @apply space-y-3;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.form-group:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.form-group:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.form-group:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.form-group:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.form-group label {
+  @apply block text-sm font-semibold text-gray-300;
+}
+
+.input-modern {
+  @apply w-full px-5 py-3 rounded-xl;
+  @apply bg-white/5 border border-white/10;
+  @apply text-white placeholder-gray-500;
+  @apply transition-all duration-300;
+  @apply focus:outline-none focus:border-purple-500 focus:bg-white/10;
+  @apply focus:shadow-lg focus:shadow-purple-500/30;
+}
+
+.input-modern:hover {
+  @apply border-white/20 bg-white/10;
+}
+
+.error-message {
+  @apply text-red-400 text-sm font-medium;
+  @apply px-4 py-3 rounded-lg;
+  @apply bg-red-500/10 border border-red-500/30;
+  animation: shake 0.5s ease-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.signup-card button[type="submit"] {
+  @apply w-full py-3 px-6 rounded-xl;
+  @apply font-semibold text-white text-lg;
+  @apply border-none cursor-pointer;
+  @apply transition-all duration-300;
+  @apply bg-gradient-to-r from-purple-600 to-pink-600;
+  @apply hover:shadow-2xl hover:shadow-purple-500/50;
+  @apply active:scale-95;
+  animation: fadeIn 0.6s ease-out 0.5s both;
+}
+
+.signup-card button[type="submit"]:hover {
+  @apply from-purple-500 to-pink-500;
+}
+
+.auth-link {
+  @apply text-center text-gray-400 text-sm mt-8;
+  animation: fadeIn 0.6s ease-out 0.6s both;
+}
+
+.auth-link a {
+  @apply text-purple-400 font-semibold;
+  @apply hover:text-pink-400 transition-colors;
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar */
+.signup-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.signup-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.signup-card::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.4);
+  border-radius: 3px;
+}
+
+.signup-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.6);
+}
+
+.signup-btn-submit:hover::before {
+  opacity: 1;
+}
+
+.signup-btn-submit:hover {
+  @apply -translate-y-0.5 shadow-xl shadow-purple-500/60;
+}
+
+.signup-btn-submit:active {
+  @apply scale-95 translate-y-0;
+}
+
+.signup-btn-submit span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Disabled */
+.signup-btn-submit:disabled {
+  @apply opacity-50 cursor-not-allowed shadow-purple-500/20;
+}
+
+.signup-btn-submit:disabled:hover {
+  @apply translate-y-0 shadow-purple-500/20;
+}
+
+.signup-btn-submit:disabled::before {
+  opacity: 0;
+}
+
+/* -----------------------------
+   Animations (shared language)
+------------------------------*/
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shakeError {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+/* -----------------------------
+   Responsive
+------------------------------*/
+@media (max-width: 768px) {
+  .signup-wrapper {
+    @apply p-1;
+  }
+
+  .signup-title {
+    @apply text-[24px];
+  }
+
+  .signup-subtitle {
+    @apply text-sm;
+  }
+
+  .signup-form {
+    @apply gap-4;
+  }
+
+  .signup-btn-submit {
+    @apply px-5 py-2.5 text-sm;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-title {
+    @apply text-[22px];
+  }
+
+  .signup-subtitle {
+    @apply text-[13px] mb-4;
+  }
+
+  .profile-image-container {
+    @apply h-20 w-20;
+  }
+
+  .signup-btn-submit {
+    @apply px-4 py-2;
+  }
+}

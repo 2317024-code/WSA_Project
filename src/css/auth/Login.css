@@ -1,0 +1,152 @@
+.login-container {
+  @apply w-full h-screen flex items-center justify-center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #3f0f5c 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated background elements */
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.login-container::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  left: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(30px); }
+}
+
+.login-card {
+  @apply relative z-10 w-full max-w-md px-8 py-12 rounded-3xl;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+              0 0 60px rgba(168, 85, 247, 0.1);
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-card h1 {
+  @apply text-4xl font-bold text-center mb-2;
+  background: linear-gradient(135deg, #ffffff, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.login-card p {
+  @apply text-center text-gray-400 text-sm mb-8;
+}
+
+form {
+  @apply space-y-6;
+}
+
+.form-group {
+  @apply space-y-3;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.form-group:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.form-group:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.form-group label {
+  @apply block text-sm font-semibold text-gray-300;
+}
+
+.input-modern {
+  @apply w-full px-5 py-3 rounded-xl;
+  @apply bg-white/5 border border-white/10;
+  @apply text-white placeholder-gray-500;
+  @apply transition-all duration-300;
+  @apply focus:outline-none focus:border-purple-500 focus:bg-white/10;
+  @apply focus:shadow-lg focus:shadow-purple-500/30;
+}
+
+.input-modern:hover {
+  @apply border-white/20 bg-white/10;
+}
+
+.error-message {
+  @apply text-red-400 text-sm font-medium;
+  @apply px-4 py-3 rounded-lg;
+  @apply bg-red-500/10 border border-red-500/30;
+  animation: shake 0.5s ease-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.login-card button[type="submit"] {
+  @apply w-full py-3 px-6 rounded-xl;
+  @apply font-semibold text-white text-lg;
+  @apply border-none cursor-pointer;
+  @apply transition-all duration-300;
+  @apply bg-gradient-to-r from-purple-600 to-pink-600;
+  @apply hover:shadow-2xl hover:shadow-purple-500/50;
+  @apply active:scale-95;
+  animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.login-card button[type="submit"]:hover {
+  @apply from-purple-500 to-pink-500;
+}
+
+.auth-link {
+  @apply text-center text-gray-400 text-sm mt-8;
+  animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+.auth-link a {
+  @apply text-purple-400 font-semibold;
+  @apply hover:text-pink-400 transition-colors;
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
