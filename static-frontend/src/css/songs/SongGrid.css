@@ -14,6 +14,77 @@
   }
 }
 
+.songgrid-root {
+  @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-6 h-full w-full overflow-y-auto;
+  animation: slideInUp 0.5s ease-out;
+  padding-bottom: 140px;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.songgrid-card {
+  @apply flex flex-col gap-3 cursor-pointer group;
+  transition: all 0.3s ease;
+}
+
+.songgrid-card:hover {
+  transform: translateY(-8px);
+}
+
+.songgrid-image-wrapper {
+  @apply relative overflow-hidden rounded-lg;
+  aspect-ratio: 1;
+}
+
+.songgrid-image {
+  @apply w-full h-full object-cover;
+  transition: transform 0.3s ease;
+  border: 2px solid rgba(168, 85, 247, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2),
+    0 0 30px rgba(168, 85, 247, 0.1);
+}
+
+.songgrid-card:hover .songgrid-image {
+  transform: scale(1.05);
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4),
+    0 0 50px rgba(168, 85, 247, 0.2);
+}
+
+.songgrid-info {
+  @apply flex flex-col gap-1;
+}
+
+.songgrid-title {
+  @apply text-sm font-bold text-white truncate m-0;
+  transition: color 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.songgrid-card:hover .songgrid-title {
+  color: #a855f7;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.songgrid-artist {
+  @apply text-xs text-gray-400 truncate m-0;
+  transition: color 0.3s ease;
+}
+
+.songgrid-card:hover .songgrid-artist {
+  color: rgba(168, 85, 247, 0.8);
+}
+
 /* Custom scrollbar */
 .song-grid-wrapper::-webkit-scrollbar {
   width: 8px;

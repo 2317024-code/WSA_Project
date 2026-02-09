@@ -10,8 +10,9 @@
 }
 
 .homepage-main-wrapper {
-  @apply flex flex-1 min-h-0 gap-0;
+  @apply flex flex-1 min-h-0 gap-4;
   position: relative;
+  padding: 0 16px;
 }
 
 .homepage-sidebar {
@@ -24,6 +25,7 @@
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   border-right: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
 }
@@ -49,6 +51,11 @@
 .homepage-content {
   @apply flex-1 px-6 py-3 flex flex-col min-h-0 box-border overflow-hidden;
 }
+
+.homepage-queue {
+  @apply flex-none w-[320px] min-h-0 box-border;
+}
+
 /* Apply scrollbar styles */
 .homepage-content::-webkit-scrollbar {
   width: 10px;
@@ -104,9 +111,19 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 1200px) {
+  .homepage-queue {
+    @apply w-[280px];
+  }
+}
+
 @media (max-width: 768px) {
   .homepage-sidebar {
     @apply w-[70px] p-2;
+  }
+
+  .homepage-queue {
+    @apply hidden;
   }
 
   .homepage-content {

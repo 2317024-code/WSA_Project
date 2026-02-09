@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { IoIosSettings } from "react-icons/io";
+import { IoIosSettings, IoIosLogOut } from "react-icons/io";
 import logo from "../../assets/wsa-logo.jpg";
 import "../../css/sidemenu/SideMenu.css";
 import { CiUser } from "react-icons/ci";
 import { AiOutlineHome, AiOutlineSearch, AiOutlineHeart } from "react-icons/ai";
+import ThemeToggle from "../common/ThemeToggle";
 
 const SideMenu = ({ setView, view }) => {
   const [userName, setUserName] = useState("Guest");
+  const [showSettings, setShowSettings] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +24,8 @@ const SideMenu = ({ setView, view }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("favorites");
+    localStorage.removeItem("theme");
     navigate("/login");
   };
 
@@ -69,6 +73,12 @@ const SideMenu = ({ setView, view }) => {
         </nav>
 
         <div className="flex-1"></div>
+
+        {/* Settings and Theme Toggle */}
+        <div className="sidemenu-settings-section">
+          <ThemeToggle />
+        </div>
+
         <div className="sidemenu-profile-row">
           <div className="profile-placeholder">
             <CiUser size={30} />
@@ -80,11 +90,11 @@ const SideMenu = ({ setView, view }) => {
           <div className="settings-container">
             <button 
               type="button" 
-              className="sidemenu-settings-btn"
+              className="sidemenu-logout-btn"
               onClick={handleLogout}
               title="Logout"
             >
-              <IoIosSettings size={20} />
+              <IoIosLogOut size={20} />
             </button>
           </div>
         </div>

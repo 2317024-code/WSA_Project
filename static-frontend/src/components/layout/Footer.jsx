@@ -6,26 +6,35 @@ import Features from "../player/Features";
 
 import "../../css/footer/Footer.css";
 
-const Footer = () => {
-  // static player state (dummy)
-  const playerState = {
-    currentSong: {
-      name: "Believer",
-      artist_name: "Imagine Dragons",
-      image:
-        "https://upload.wikimedia.org/wikipedia/en/5/5c/Imagine-Dragons-Believer-art.jpg",
-    },
-    isPlaying: false,
-    currentTime: 0,
-    duration: 0,
-    volume: 50,
-  };
-
+const Footer = ({
+  playerState,
+  onPlayPause,
+  onNextSong,
+  onPreviousSong,
+  onProgressChange,
+  onVolumeChange,
+  onSpeedChange,
+  onToggleShuffle,
+  onToggleLoop,
+  onToggleLike,
+}) => {
   return (
     <footer className="footer-root footer-glow">
       <SongDetail currentSong={playerState.currentSong} />
-      <ControlArea playerState={playerState} />
-      <Features playerState={playerState} />
+      <ControlArea
+        playerState={playerState}
+        onPlayPause={onPlayPause}
+        onNextSong={onNextSong}
+        onPreviousSong={onPreviousSong}
+        onProgressChange={onProgressChange}
+      />
+      <Features
+        playerState={playerState}
+        onVolumeChange={onVolumeChange}
+        onSpeedChange={onSpeedChange}
+        onToggleShuffle={onToggleShuffle}
+        onToggleLoop={onToggleLoop}
+      />
     </footer>
   );
 };

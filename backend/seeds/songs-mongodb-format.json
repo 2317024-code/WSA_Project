@@ -1,0 +1,167 @@
+/** 
+* MongoDB Songs Collection - Extended JSON Format
+* Copy and paste this into MongoDB Atlas > Data > Insert Document
+* Or import using mongoimport
+*/
+[
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439011"
+    },
+    "name": "Believer",
+    "artist_name": "Imagine Dragons",
+    "releasedate": "2017",
+    "duration": "3:24",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439012"
+    },
+    "name": "Faded",
+    "artist_name": "Alan Walker",
+    "releasedate": "2015",
+    "duration": "3:32",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:01:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:01:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439013"
+    },
+    "name": "Shape of You",
+    "artist_name": "Ed Sheeran",
+    "releasedate": "2017",
+    "duration": "3:53",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:02:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:02:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439014"
+    },
+    "name": "Blinding Lights",
+    "artist_name": "The Weeknd",
+    "releasedate": "2019",
+    "duration": "3:20",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:03:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:03:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439015"
+    },
+    "name": "Bad Guy",
+    "artist_name": "Billie Eilish",
+    "releasedate": "2018",
+    "duration": "3:14",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:04:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:04:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439016"
+    },
+    "name": "Levitating",
+    "artist_name": "Dua Lipa",
+    "releasedate": "2020",
+    "duration": "3:23",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:05:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:05:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439017"
+    },
+    "name": "Sunroof",
+    "artist_name": "Nicky Youre",
+    "releasedate": "2022",
+    "duration": "3:31",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:06:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:06:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439018"
+    },
+    "name": "Anti-Hero",
+    "artist_name": "Taylor Swift",
+    "releasedate": "2022",
+    "duration": "3:20",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:07:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:07:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd799439019"
+    },
+    "name": "Rolling in the Deep",
+    "artist_name": "Adele",
+    "releasedate": "2010",
+    "duration": "3:48",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:08:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:08:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "507f1f77bcf86cd79943901a"
+    },
+    "name": "Someone You Loved",
+    "artist_name": "Lewis Capaldi",
+    "releasedate": "2018",
+    "duration": "3:02",
+    "cover": "/assets/logo.png",
+    "createdAt": {
+      "$date": "2026-02-08T10:09:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:09:00Z"
+    }
+  }
+]

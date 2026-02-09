@@ -1,5 +1,6 @@
 import React from "react";
 import "../../css/footer/SongDetail.css";
+import logo from "../../assets/logo.png";
 
 const SongDetail = ({ currentSong }) => {
   const fallback = {
@@ -15,6 +16,7 @@ const SongDetail = ({ currentSong }) => {
     <div className="songdetail-root">
       <div className="songdetail-image-wrapper">
         <img src={data.image} alt={data.name} className="songdetail-image" />
+        <img src={logo} alt="logo" className="songdetail-logo" />
       </div>
 
       <div className="songdetail-text">

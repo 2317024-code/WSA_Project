@@ -1,5 +1,6 @@
 import React from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import logoImage from "../../assets/logo.png";
 import "../../css/songs/SongGrid.css";
 
 const SongGrid = ({ songs, onAddToFavorites, isSongFavorited }) => {
@@ -22,7 +23,7 @@ const SongGrid = ({ songs, onAddToFavorites, isSongFavorited }) => {
             <div className="songcard-root">
               <div className="songcard-image-container">
                 <img
-                  src={song.cover}
+                  src={logoImage}
                   alt={song.name}
                   className="songcard-image"
                 />

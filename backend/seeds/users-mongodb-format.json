@@ -1,0 +1,63 @@
+/** 
+* MongoDB Users Collection - Extended JSON Format
+* Copy and paste this into MongoDB Atlas > Data > Insert Document
+* Or import using mongoimport
+*/
+[
+  {
+    "_id": {
+      "$oid": "607f1f77bcf86cd799439101"
+    },
+    "name": "Demo User",
+    "email": "demo@example.com",
+    "passwordHash": "$2b$10$demoHashedPassword123",
+    "createdAt": {
+      "$date": "2026-02-08T10:00:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:00:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607f1f77bcf86cd799439102"
+    },
+    "name": "John Doe",
+    "email": "john@example.com",
+    "passwordHash": "$2b$10$johnHashedPassword456",
+    "createdAt": {
+      "$date": "2026-02-08T10:01:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:01:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607f1f77bcf86cd799439103"
+    },
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "passwordHash": "$2b$10$janeHashedPassword789",
+    "createdAt": {
+      "$date": "2026-02-08T10:02:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:02:00Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "607f1f77bcf86cd799439104"
+    },
+    "name": "Music Lover",
+    "email": "musiclover@example.com",
+    "passwordHash": "$2b$10$musicHashedPassword000",
+    "createdAt": {
+      "$date": "2026-02-08T10:03:00Z"
+    },
+    "updatedAt": {
+      "$date": "2026-02-08T10:03:00Z"
+    }
+  }
+]

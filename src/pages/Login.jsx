@@ -6,27 +6,42 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError("");
     
     if (!email || !password) {
       setError("Please fill in all fields");
+      setLoading(false);
       return;
     }
 
     // Simple validation
     if (!/\S+@\S+\.\S+/.test(email)) {
       setError("Please enter a valid email");
+      setLoading(false);
       return;
     }
 
-    // Store user data in localStorage
-    localStorage.setItem("user", JSON.stringify({ email, isAuthenticated: true }));
-    
-    // Redirect to home
-    navigate("/");
+    // Simulate API call
+    setTimeout(() => {
+      // Store user data in localStorage with name extracted from email
+      const name = email.split("@")[0];
+      localStorage.setItem("user", JSON.stringify({ 
+        name: name.charAt(0).toUpperCase() + name.slice(1), 
+        email, 
+        isAuthenticated: true,
+        loginTime: new Date().toISOString()
+      }));
+      
+      setLoading(false);
+      // Redirect to home
+      navigate("/");
+    }, 500);
   };
 
   return (
@@ -68,8 +83,8 @@ const Login = () => {
 
           {error && <div className="error-message">{error}</div>}
 
-          <button type="submit" className="btn-primary">
-            Sign In
+          <button type="submit" className="btn-primary" disabled={loading}>
+            {loading ? "Signing in..." : "Sign In"}
           </button>
         </form>
 

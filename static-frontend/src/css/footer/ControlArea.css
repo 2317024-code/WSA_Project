@@ -133,7 +133,16 @@
   transition: all 0.3s ease;
 }
 
+.control-progress::-webkit-slider-runnable-track {
+  @apply w-full h-1.5 rounded-full;
+  background: #333333;
+}
+
 .control-progress:hover {
+  height: 6px;
+}
+
+.control-progress::-webkit-slider-runnable-track:hover {
   height: 6px;
 }
 
@@ -146,9 +155,10 @@
   box-shadow: 0 2px 8px rgba(168, 85, 247, 0.6),
     0 0 20px rgba(168, 85, 247, 0.4);
   transition: all 0.3s ease;
+  margin-top: -8px;
 }
 
-.control-progress:hover::-webkit-slider-thumb {
+.control-progress::-webkit-slider-thumb:hover {
   @apply w-4 h-4;
   box-shadow: 0 4px 16px rgba(168, 85, 247, 0.8),
     0 0 30px rgba(168, 85, 247, 0.6);
@@ -173,6 +183,13 @@
 .control-progress::-moz-range-track {
   @apply h-1.5 rounded-full;
   background: #333333;
+  border: none;
+}
+
+.control-progress::-moz-range-progress {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  height: 100%;
+  border-radius: 9999px;
 }
 
 /* Time display */

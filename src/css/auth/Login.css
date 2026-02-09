@@ -131,15 +131,26 @@ form {
   @apply from-purple-500 to-pink-500;
 }
 
-.auth-link {
-  @apply text-center text-gray-400 text-sm mt-8;
-  animation: fadeIn 0.6s ease-out 0.4s both;
+.login-card button[type="submit"]:disabled {
+  @apply opacity-50 cursor-not-allowed;
 }
 
-.auth-link a {
-  @apply text-purple-400 font-semibold;
-  @apply hover:text-pink-400 transition-colors;
-  text-decoration: none;
+/* Dark theme support */
+[data-theme="dark"] .login-container {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #3f0f5c 100%);
+}
+
+[data-theme="dark"] .login-card {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+[data-theme="dark"] .input-modern {
+  @apply bg-white/5 border-white/10;
+}
+
+[data-theme="dark"] .input-modern:focus {
+  @apply bg-white/10 border-purple-500;
 }
 
 @keyframes fadeIn {

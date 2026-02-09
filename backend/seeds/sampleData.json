@@ -1,0 +1,96 @@
+{
+  "songs": [
+    {
+      "name": "Believer",
+      "artist_name": "Imagine Dragons",
+      "releasedate": "2017",
+      "duration": "3:24",
+      "cover": "/assets/logo.png"
+    },
+    {
+      "name": "Faded",
+      "artist_name": "Alan Walker",
+      "releasedate": "2015",
+      "duration": "3:32",
+      "cover": "/assets/logo.png"
+    },
+    {
+      "name": "Shape of You",
+      "artist_name": "Ed Sheeran",
+      "releasedate": "2017",
+      "duration": "3:53",
+      "cover": "/assets/logo.png"
+    },
+    {
+      "name": "Blinding Lights",
+      "artist_name": "The Weeknd",
+      "releasedate": "2019",
+      "duration": "3:20",
+      "cover": "/assets/logo.png"
+    },
+    {
+      "name": "Bad Guy",
+      "artist_name": "Billie Eilish",
+      "releasedate": "2018",
+      "duration": "3:14",
+      "cover": "/assets/logo.png"
+    },
+    {
+      "name": "Levitating",
+      "artist_name": "Dua Lipa",
+      "releasedate": "2020",
+      "duration": "3:23",
+      "cover": "/assets/logo.png"
+    },
+    {
+      "name": "Sunroof",
+      "artist_name": "Nicky Youre",
+      "releasedate": "2022",
+      "duration": "3:31",
+      "cover": "/assets/logo.png"
+    },
+    {
+      "name": "Anti-Hero",
+      "artist_name": "Taylor Swift",
+      "releasedate": "2022",
+      "duration": "3:20",
+      "cover": "/assets/logo.png"
+    },
+    {
+      "name": "Rolling in the Deep",
+      "artist_name": "Adele",
+      "releasedate": "2010",
+      "duration": "3:48",
+      "cover": "/assets/logo.png"
+    },
+    {
+      "name": "Someone You Loved",
+      "artist_name": "Lewis Capaldi",
+      "releasedate": "2018",
+      "duration": "3:02",
+      "cover": "/assets/logo.png"
+    }
+  ],
+  "users": [
+    {
+      "name": "Demo User",
+      "email": "demo@example.com",
+      "passwordHash": "$2b$10$demoHashedPassword123"
+    },
+    {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "passwordHash": "$2b$10$johnHashedPassword456"
+    },
+    {
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "passwordHash": "$2b$10$janeHashedPassword789"
+    },
+    {
+      "name": "Music Lover",
+      "email": "musiclover@example.com",
+      "passwordHash": "$2b$10$musicHashedPassword000"
+    }
+  ]
+}

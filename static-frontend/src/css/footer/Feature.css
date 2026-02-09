@@ -55,6 +55,19 @@
   transform: scale(0.95);
 }
 
+.loop-indicator {
+  @apply absolute top-0 right-0 text-xs font-bold;
+  background: #a855f7;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
 .features-btn svg {
   position: relative;
   z-index: 1;

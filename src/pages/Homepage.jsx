@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Footer from "../components/layout/Footer";
 import SideMenu from "../components/layout/SideMenu";
 import MainArea from "../components/layout/MainArea";
+import Statistics from "../components/common/Statistics";
+import PlayerQueue from "../components/common/PlayerQueue";
 
 import "../css/pages/HomePage.css";
 
@@ -12,6 +14,24 @@ const Homepage = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [favorites, setFavorites] = useState([]);
+  const [showQueue, setShowQueue] = useState(false);
+
+  // Load favorites from localStorage on mount
+  useEffect(() => {
+    const savedFavorites = localStorage.getItem("favorites");
+    if (savedFavorites) {
+      try {
+        setFavorites(JSON.parse(savedFavorites));
+      } catch (error) {
+        console.error("Error loading favorites:", error);
+      }
+    }
+  }, []);
+
+  // Save favorites to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   const songs = [
     {
@@ -105,12 +125,20 @@ const Homepage = () => {
     });
   };
 
+  const handleSelectSongFromQueue = (index) => {
+    setCurrentSongIndex(index);
+    setIsPlaying(true);
+  };
+
   const isSongFavorited = (songId) => {
     return favorites.some((fav) => fav.id === songId);
   };
 
   return (
     <div className="homepage-root">
+      {/* Statistics Section */}
+      <Statistics songs={songs} favorites={favorites} />
+      
       <div className="homepage-main-wrapper">
         {/* Sidebar */}
         <div className="homepage-sidebar">
@@ -124,6 +152,15 @@ const Homepage = () => {
             favorites={favorites}
             onAddToFavorites={handleAddToFavorites}
             isSongFavorited={isSongFavorited}
+          />
+        </div>
+        {/* Queue Sidebar */}
+        <div className="homepage-queue">
+          <PlayerQueue
+            songs={songs}
+            currentSongIndex={currentSongIndex}
+            isPlaying={isPlaying}
+            onSelectSong={handleSelectSongFromQueue}
           />
         </div>
       </div>

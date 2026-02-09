@@ -213,29 +213,63 @@
   @apply flex items-center;
 }
 
-.sidemenu-settings-btn {
+.sidemenu-settings-section {
+  @apply flex justify-center mb-4;
+  animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.sidemenu-logout-btn {
   @apply bg-transparent border-none cursor-pointer p-2 text-gray-400 
          rounded-lg transition-all duration-300;
   position: relative;
   z-index: 1;
 }
 
-.sidemenu-settings-btn:hover {
-  @apply text-white bg-white/10;
-  box-shadow: 0 2px 10px rgba(168, 85, 247, 0.2);
+.sidemenu-logout-btn:hover {
+  @apply text-white bg-red-500/20;
+  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.3);
 }
 
-.sidemenu-settings-btn svg {
+.sidemenu-logout-btn svg {
   transition: transform 0.3s ease;
   display: block;
 }
 
-.sidemenu-settings-btn:hover svg {
-  transform: rotate(90deg);
+.sidemenu-logout-btn:hover svg {
+  transform: rotate(180deg);
 }
 
-.sidemenu-settings-btn:active {
+.sidemenu-logout-btn:active {
   transform: scale(0.95);
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] .sidemenu-root {
+  color: #e5e7eb;
+}
+
+[data-theme="dark"] .sidemenu-logo-title {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="dark"] .sidemenu-nav-btn {
+  color: #d1d5db;
+}
+
+[data-theme="dark"] .sidemenu-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .sidemenu-profile-row {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .sidemenu-username {
+  color: #f3f4f6;
 }
 
 /* Responsive Design */
@@ -267,4 +301,9 @@
   .sidemenu-profile-row {
     @apply flex-col p-2 gap-2;
   }
+
+  .sidemenu-settings-section {
+    @apply mb-2;
+  }
+
 }

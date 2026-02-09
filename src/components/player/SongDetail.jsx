@@ -1,20 +1,23 @@
 import React from "react";
+import logoImage from "../../assets/logo.png";
 import "../../css/footer/SongDetail.css";
 
 const SongDetail = ({ currentSong }) => {
   const fallback = {
     name: "Song not selected",
     artist_name: "Not selected",
-    image:
-      "https://usercontent.jamendo.com?type=album&id=24&width=300&trackid=168",
+    image: logoImage,
   };
 
   const data = currentSong || fallback;
+  
+  // Use logo image for all songs
+  const imageToDisplay = logoImage;
 
   return (
     <div className="songdetail-root">
       <div className="songdetail-image-wrapper">
-        <img src={data.image} alt={data.name} className="songdetail-image" />
+        <img src={imageToDisplay} alt={data.name} className="songdetail-image" />
       </div>
 
       <div className="songdetail-text">
